@@ -212,6 +212,8 @@ def flap_analysis(vehicle):
     aerodynamics.process.compute.lift.inviscid.training.angle_of_attack    = np.array([0.,3.,6.]) * Units.deg    
     aerodynamics.settings.drag_coefficient_increment = 0.4 * vehicle.excrescence_area/vehicle.reference_area
     
+    #not sure if this following section is necessary? 
+    
     wing_segments = vehicle.wings.main_wing.Segments
     wing_segments.root.vsp_mesh = Data()
     wing_segments.root.vsp_mesh.inner_radius  = 4.
@@ -687,7 +689,7 @@ def configs_setup(vehicle):
 
     configs.append(config)    
 
-# my configs 
+# my configs momentum coefficient 0.05
     config = SUAVE.Components.Configs.Config(base_config)
     config.tag = 'momcoeff'    
   
